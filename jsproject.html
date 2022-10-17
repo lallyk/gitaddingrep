@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form  id="form1" onsubmit="event.preventDefault();onform()" autocomplete="off">
+            <label for="amount">choose expense amount </label>
+            <input type ="text"  class="form-control" id="amount" placeholder="Enter amount">
+            <label for="des">choose description </label>
+            <input type ="text"  class="form-control" id="des" placeholder="description">
+            <label id="header-title">choose a category</label>
+            <select id="cat" >
+                <option></option>
+                <option>movie</option>
+                <option>fuel</option>
+                <option>food</option>
+                <option>shopping</option>
+            </select>
+            <button id="entry">Add Expense</button></form>
+            <table id="display">
+                <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>category</th>
+                    <th>options</th>
+                </tr></thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        <style>
+            table{
+                border-collapse:collapse;
+                width:50%;
+                margin: 50px auto;
+            }
+            table,th,td{
+                border:2px solid black;
+                padding:5px;
+            }
+            th{
+                font-size: 25px;
+                font-weight: 450;
+                font-family: 'Arial';
+            }
+            td{
+                font-size: 20px;
+                font-weight: 400;
+                font-family: 'georgia';
+            }
+        </style>
+       <script src="jsproject.js"></script>
+</body>
+</html>
