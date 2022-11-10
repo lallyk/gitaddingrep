@@ -11,14 +11,22 @@ function addItem(e)
     li.className='list-group-item';
     li.appendChild(document.createTextNode(newItem));
     var delbtn=document.createElement('button');
+<<<<<<< HEAD
     iteml.appendChild(li);
+=======
+    //iteml.appendChild(li);
+>>>>>>> b651ef3eac249e51185f0841657c1731d4386abf
     delbtn.className='btn';
     delbtn.appendChild(document.createTextNode('del'));
     li.appendChild(delbtn);
     iteml.appendChild(li);
     li.appendChild(document.createTextNode(newItem));
     var delbtn1=document.createElement('button');
+<<<<<<< HEAD
     iteml.appendChild(li);
+=======
+    //iteml.appendChild(li);
+>>>>>>> b651ef3eac249e51185f0841657c1731d4386abf
     delbtn1.className='btn1';
     delbtn1.appendChild(document.createTextNode('edit'));
     li.appendChild(delbtn1);
@@ -32,4 +40,8 @@ function removeItem(e)
             iteml.removeChild(li);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b651ef3eac249e51185f0841657c1731d4386abf
