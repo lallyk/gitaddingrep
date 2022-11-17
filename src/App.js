@@ -1,27 +1,13 @@
-/*import { Fragment } from "react";
-import Header from "./components/Layout/Header";
-//import MealItem from "./components/Meals/MealItem";
-import Meals from "./components/Meals/Meals";
-import MealsSummary from "./components/Meals/MealsSummary";
-function App() {
-  return (
-    <Fragment>
-      <Header />
-      <MealsSummary />
-      <Meals />
-    </Fragment>
-  );
-}
-
-export default App;*/
 import { Fragment } from "react";
 
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
     <Fragment>
+      <Cart />
       <Header />
       <main>
         <Meals />
