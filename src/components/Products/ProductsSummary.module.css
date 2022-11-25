@@ -1,0 +1,24 @@
+.summary {
+  text-align: center;
+  width: 65%;
+  background-color: #fffafa;
+  color: rgb(8, 8, 8);
+}
+.imagecontainer {
+}
+.page {
+  float: left;
+  width: 65%;
+}
+.proddetails {
+  justify-content: space-between;
+}
+.itembutton {
+  font: inherit;
+  background-color: #80f1f1;
+  border: 1px solid #72d4ec;
+  color: white;
+  padding: 0.25rem 2rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
