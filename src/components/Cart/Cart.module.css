@@ -22,6 +22,7 @@
 .actions {
   text-align: center;
   display: flex;
+  float: right;
 }
 
 .actions button {
@@ -32,6 +33,7 @@
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
+  float: right;
 }
 
 .actions button:hover,
@@ -41,11 +43,20 @@
   color: white;
 }
 
-.actions .button--alt {
+.buttonclose {
+  background-color: #060a44;
+  border-color: #060a44;
   color: #d3e3e4;
+  align-items: flex-end;
+  padding: 0.5rem 2rem;
+  text-align: right;
+  float: right;
 }
 
 .actions .button {
   background-color: #060a44;
   color: white;
+  text-align: center;
+  display: inline-block;
+  float: right;
 }

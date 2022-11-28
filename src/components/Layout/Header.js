@@ -9,7 +9,7 @@ const Header = (props) => {
         <h3>Home</h3>
         <h3>About</h3>
         <h3>Store</h3>
-        <HeaderCartButton />
+        <HeaderCartButton onClick={props.onShowCart} />
       </header>
       <div className={classes.generics}>
         <h1>The Generics</h1>
