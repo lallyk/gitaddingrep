@@ -1,42 +1,44 @@
-//import classes from "./AvailableProducts.module.css";
 import ProductItem from "./ProductItem";
-//import image1 from "../assets/image1.png";
+import classes from "./AvailableProducts.module.css";
 const productsArr = [
   {
     title: "Colors",
     price: 100,
-    imageUrl: "assets/image2.png",
+    imageUrl: "./assets/image1.png",
   },
+
   {
     title: "Black and white Colors",
     price: 50,
-    imageUrl: "assets/image1.png",
+    imageUrl: "./assets/image2.png",
   },
+
   {
     title: "Yellow and Black Colors",
     price: 70,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
+    imageUrl: "./assets/image3.png",
   },
+
   {
     title: "Blue Color",
     price: 100,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
+    imageUrl: "./assets/image4.png",
   },
 ];
-const AvailableProducts = () => {
+
+const AvailableProducts = (props) => {
   const mealsList = productsArr.map((meal) => (
     <ProductItem
       key={meal.id}
-      id={meal.id}
       title={meal.title}
+      imageUrl={meal.imageUrl}
       price={meal.price}
-      imageurl={meal.imageurl}
     />
   ));
 
   return (
-    <section>
-      <div>
+    <section className={classes.meals}>
+      <div className={classes.div}>
         <ul>{mealsList}</ul>
       </div>
     </section>

@@ -1,9 +1,12 @@
-import AvailableProducts from "./components/Products/AvailableProducts";
-import "./App.css";
+import { useState } from "react";
+
 import Header from "./components/Layout/Header";
-import ProductsSummary from "./components/Products/ProductsSummary";
 import Cart from "./components/Cart/Cart";
-import { Fragment, useState } from "react";
+import Products from "./components/Products/Products";
+import CartProvider from "./Store/CartProvider";
+import { Route } from "react-router-dom";
+import About from "./components/Pages/About";
+import Home from "./components/Pages/Home";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -13,13 +16,21 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
+
   return (
-    <Fragment>
+    <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
-      <ProductsSummary />
-      <AvailableProducts />
-    </Fragment>
+      <Route path="/About">
+        <About />
+      </Route>
+      <Route path="/Home">
+        <Home />
+      </Route>
+      <main>
+        <Products />
+      </main>
+    </CartProvider>
   );
 }
 
