@@ -18,8 +18,10 @@ const Header = (props) => {
           <NavLink activeClassName={classes.active} to="/contact">
             CONTACT US
           </NavLink>
+          <NavLink activeClassName={classes.active} to="/products">
+            PRODUCTS
+          </NavLink>
         </nav>
-        <h3>Store</h3>
         <HeaderCartButton onClick={props.onShowCart} />
       </header>
       <div className={classes.generics}>

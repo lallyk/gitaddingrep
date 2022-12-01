@@ -3,8 +3,12 @@ import { useContext } from "react";
 import ProductItemForm from "./ProductItemForm";
 import classes from "./ProductItem.module.css";
 import CartContext from "../../Store/CartContext";
+import ProductContext from "../../Store/ProductContext";
+import { Link } from "react-router-dom";
 const ProductItem = (props) => {
   const cartCtx = useContext(CartContext);
+  const productCtx = useContext(ProductContext);
+
   const addToCartHandler = (quantity) => {
     cartCtx.addItem({
       id: props.id,
@@ -14,12 +18,29 @@ const ProductItem = (props) => {
       quantity: quantity,
     });
   };
+  const productInformation = {
+    title: props.title,
+    imageUrl: props.imageUrl,
+    price: props.price,
+    rating: 4.5,
+    detail: "Best album of the year",
+  };
+
+  const productDetailHandler = () => {
+    productCtx.changeDetail(productInformation);
+  };
   return (
     <div className={classes.div}>
       <div className={classes.page}>
         <h2>{props.title}</h2>
         <div className={classes.image}>
-          <img src={props.imageUrl} alt="Music Album" />
+          <Link to={`/product/${props.title}`}>
+            <img
+              src={props.imageUrl}
+              alt="Music Album"
+              onClick={productDetailHandler}
+            />
+          </Link>
         </div>
         <div className={classes.detail}>
           <span className={classes.itembuttonprice}>${props.price}</span>
