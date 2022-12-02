@@ -1,25 +1,15 @@
-import AvailableProducts from "./components/Products/AvailableProducts";
-import "./App.css";
-import Header from "./components/Layout/Header";
-import ProductsSummary from "./components/Products/ProductsSummary";
-import Cart from "./components/Cart/Cart";
-import { Fragment, useState } from "react";
+import { Route } from "react-router-dom";
+import Header from "./components/Header";
+import Logout from "./components/Pages/Logout";
 
 function App() {
-  const [cartIsShown, setCartIsShown] = useState(false);
-  const showCartHandler = () => {
-    setCartIsShown(true);
-  };
-  const hideCartHandler = () => {
-    setCartIsShown(false);
-  };
   return (
-    <Fragment>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <ProductsSummary />
-      <AvailableProducts />
-    </Fragment>
+    <div>
+      <Header />
+      <Route path="/signup">
+        <Logout />
+      </Route>
+    </div>
   );
 }
 
