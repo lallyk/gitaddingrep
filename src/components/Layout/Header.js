@@ -21,6 +21,9 @@ const Header = (props) => {
           <NavLink activeClassName={classes.active} to="/products">
             PRODUCTS
           </NavLink>
+          <NavLink activeClassName={classes.active} to="/login">
+            Login
+          </NavLink>
         </nav>
         <HeaderCartButton onClick={props.onShowCart} />
       </header>
