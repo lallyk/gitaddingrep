@@ -20,17 +20,29 @@ function App() {
 }
 
 export default App;*/
-import { Route } from "react-router-dom";
+//import { Route, Switch } from "react-router-dom";
 //import Header from "./components/Header";
+import { Route, Redirect, Switch } from "react-router-dom";
 import MainHeader from "./components/MainHeader";
 import LogoutPage from "./components/Pages/LogoutPage";
+import Welcome from "./components/Pages/Welcome";
+import Profile from "./components/Pages/Profile";
 
 function App() {
+  /*<Redirect to="/welcome" /> */
   return (
     <MainHeader>
-      <Route path="/signup">
-        <LogoutPage />
-      </Route>
+      <Switch>
+        <Route path="/signup">
+          <LogoutPage />
+        </Route>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+      </Switch>
     </MainHeader>
   );
 }
