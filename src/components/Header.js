@@ -7,6 +7,9 @@ const Header = (props) => {
       <nav>
         <Link to="/signup">signUp</Link>
       </nav>
+      <nav>
+        <Link to="/welcome">Welcome</Link>
+      </nav>
     </Fragment>
   );
 };
