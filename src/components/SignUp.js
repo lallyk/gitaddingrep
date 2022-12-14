@@ -2,6 +2,7 @@ import classes from "./SignUp.module.css";
 import { useHistory } from "react-router-dom";
 import { useState, useRef, useContext } from "react";
 import AuthContext from "../Store/AuthContext";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const emailInputRef = useRef();
@@ -68,6 +69,11 @@ const SignUp = () => {
   return (
     <section className={classes.auth}>
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
+      <h2>
+        <nav>
+          <Link to="/forgot">Forgot Password</Link>
+        </nav>
+      </h2>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="email">Your Email</label>
