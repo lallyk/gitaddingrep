@@ -13,6 +13,9 @@ const Header = (props) => {
       <nav>
         <Link to="/verify">Verify Email</Link>
       </nav>
+      <nav>
+        <Link to="/expenses">Expenses</Link>
+      </nav>
     </Fragment>
   );
 };

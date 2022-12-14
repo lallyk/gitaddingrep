@@ -33,13 +33,11 @@ const Forgot = () => {
       });
   };
   return (
-    <form>
+    <form onSubmit={ForgotHandler}>
       <div>
         <label htmlFor="email">Enter Email</label>
         <input type="email" required ref={emailInputRef} />
-        <button type="submit" onClick={ForgotHandler}>
-          SUBMIT
-        </button>
+        <button type="submit">SEND LINK</button>
       </div>
     </form>
   );
