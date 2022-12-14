@@ -10,6 +10,9 @@ const Header = (props) => {
       <nav>
         <Link to="/welcome">Welcome</Link>
       </nav>
+      <nav>
+        <Link to="/verify">Verify Email</Link>
+      </nav>
     </Fragment>
   );
 };

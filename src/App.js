@@ -1,32 +1,10 @@
-/*import { Route, Switch } from "react-router-dom";
-import Header from "./components/Header";
-import MainHeader from "./components/MainHeader";
-import LogoutPage from "./components/Pages/LogoutPage";
-//import Logout from "./components/Pages/LogoutPage";
-
-function App() {
-  return (
-    <MainHeader>
-      <div>
-        <Header />
-        <Switch>
-          <Route path="/signup">
-            <LogoutPage />
-          </Route>
-        </Switch>
-      </div>
-    </MainHeader>
-  );
-}
-
-export default App;*/
-//import { Route, Switch } from "react-router-dom";
-//import Header from "./components/Header";
 import { Route, Redirect, Switch } from "react-router-dom";
 import MainHeader from "./components/MainHeader";
-import LogoutPage from "./components/Pages/LogoutPage";
+import SignUpPage from "./components/Pages/SignUpPage";
 import Welcome from "./components/Pages/Welcome";
-import Profile from "./components/Pages/Profile";
+import Update from "./components/Pages/Update";
+import VerifyEmail from "./components/Pages/VerifyEmail";
+//import { AuthContextProvider } from "./Store/AuthContext";
 
 function App() {
   /*<Redirect to="/welcome" /> */
@@ -34,13 +12,16 @@ function App() {
     <MainHeader>
       <Switch>
         <Route path="/signup">
-          <LogoutPage />
+          <SignUpPage />
+        </Route>
+        <Route path="/verify">
+          <VerifyEmail />
         </Route>
         <Route path="/welcome">
           <Welcome />
         </Route>
-        <Route path="/profile">
-          <Profile />
+        <Route path="/update">
+          <Update />
         </Route>
       </Switch>
     </MainHeader>

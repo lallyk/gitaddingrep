@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
+import classes from "./Welcome.module.css";
 
 const Welcome = () => {
   return (
-    <div>
-      <h1>Welcome To Expense Tracker</h1>
-      <h1>Your profile is incomplete</h1>
-      <h1>
+    <div className={classes.h1}>
+      <h2>Welcome To Expense Tracker</h2>
+      <h2>Your profile is incomplete</h2>
+      <h2>
         <nav>
-          <Link to="/profile">Complete Now</Link>
+          <Link to="/update">Complete Now</Link>
         </nav>
-      </h1>
+      </h2>
     </div>
   );
 };
