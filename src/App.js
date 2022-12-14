@@ -4,6 +4,7 @@ import SignUpPage from "./components/Pages/SignUpPage";
 import Welcome from "./components/Pages/Welcome";
 import Update from "./components/Pages/Update";
 import VerifyEmail from "./components/Pages/VerifyEmail";
+import LogOut from "./components/Pages/LogOut";
 //import { AuthContextProvider } from "./Store/AuthContext";
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
         </Route>
         <Route path="/update">
           <Update />
+        </Route>
+        <Route path="/logout">
+          <LogOut />
+          <Redirect to="/signup" />
         </Route>
       </Switch>
     </MainHeader>
