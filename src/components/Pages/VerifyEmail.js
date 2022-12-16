@@ -22,7 +22,7 @@ const VerifyEmail = () => {
         if (res.ok) {
           return res.json();
         } else {
-          throw new Error(error.message);
+          throw new Error("not working");
         }
       })
       .then((data) => {
