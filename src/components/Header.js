@@ -1,22 +1,24 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import classes from './Header.module.css';
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <Fragment>
+    <header className={classes.header}>
+      <h1>Redux Auth</h1>
       <nav>
-        <Link to="/signup">signUp</Link>
+        <ul>
+          <li>
+            <a href='/'>My Products</a>
+          </li>
+          <li>
+            <a href='/'>My Sales</a>
+          </li>
+          <li>
+            <button>Logout</button>
+          </li>
+        </ul>
       </nav>
-      <nav>
-        <Link to="/welcome">Welcome</Link>
-      </nav>
-      <nav>
-        <Link to="/verify">Verify Email</Link>
-      </nav>
-      <nav>
-        <Link to="/expenses">Expenses</Link>
-      </nav>
-    </Fragment>
+    </header>
   );
 };
+
 export default Header;
