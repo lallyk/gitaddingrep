@@ -1,34 +1,22 @@
-import classes from "./Header.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { AuthActions } from "../store/index";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
-const Header = () => {
-  const dispatch = useDispatch();
-  const isAuth = useSelector((state) => state.auth.isAuthenticated);
-  const logoutHandler = (event) => {
-    event.preventDefault();
-    dispatch(AuthActions.logout());
-  };
+const Header = (props) => {
   return (
-    <header className={classes.header}>
-      <h1>Redux Auth</h1>
-      {isAuth && (
-        <nav>
-          <ul>
-            <li>
-              <a href="/">My Products</a>
-            </li>
-            <li>
-              <a href="/">My Sales</a>
-            </li>
-            <li>
-              <button onClick={logoutHandler}>Logout</button>
-            </li>
-          </ul>
-        </nav>
-      )}
-    </header>
+    <Fragment>
+      <nav>
+        <Link to="/signup">signUp</Link>
+      </nav>
+      <nav>
+        <Link to="/welcome">Welcome</Link>
+      </nav>
+      <nav>
+        <Link to="/verify">Verify Email</Link>
+      </nav>
+      <nav>
+        <Link to="/expenses">Expenses</Link>
+      </nav>
+    </Fragment>
   );
 };
-
 export default Header;

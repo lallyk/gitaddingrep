@@ -1,19 +1,43 @@
-import Counter from "./components/Counter";
-import { Fragment } from "react";
-import Header from "./components/Header";
-import Auth from "./components/Auth";
-import { useSelector } from "react-redux";
-import UserProfile from "./components/UserProfile";
+import { Route, Redirect, Switch } from "react-router-dom";
+import MainHeader from "./components/MainHeader";
+import SignUpPage from "./components/Pages/SignUpPage";
+import Welcome from "./components/Pages/Welcome";
+import Update from "./components/Pages/Update";
+import VerifyEmail from "./components/Pages/VerifyEmail";
+import LogOut from "./components/Pages/LogOut";
+import Forgot from "./components/Pages/Forgot";
+import Expenses from "./components/Pages/Expenses";
+//import { AuthContextProvider } from "./Store/AuthContext";
 
 function App() {
-  const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  /*<Redirect to="/welcome" /> */
   return (
-    <Fragment>
-      <Header />
-      {!isAuth && <Auth />}
-      {isAuth && <UserProfile />}
-      <Counter />
-    </Fragment>
+    <MainHeader>
+      <Switch>
+        <Route path="/signup">
+          <SignUpPage />
+        </Route>
+        <Route path="/verify">
+          <VerifyEmail />
+        </Route>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/update">
+          <Update />
+        </Route>
+        <Route path="/logout">
+          <LogOut />
+          <Redirect to="/signup" />
+        </Route>
+        <Route path="/forgot">
+          <Forgot />
+        </Route>
+        <Route path="/expenses">
+          <Expenses />
+        </Route>
+      </Switch>
+    </MainHeader>
   );
 }
 
