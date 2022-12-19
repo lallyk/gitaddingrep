@@ -1,26 +1,28 @@
 import classes from "./Expenses.module.css";
 import React, { useRef } from "react";
 import ExpenseData from "./ExpensesData";
+import { useDispatch, useSelector } from "react-redux";
+//import { authActions } from "../Store/AuthReducer";
+import { expenseActions } from "../../Store/ExpenseReducer";
+import Premium from "./Premium";
+import { CSVLink } from "react-csv";
+
 const Expenses = () => {
   const amount = useRef();
   const description = useRef();
   const category = useRef();
+  const data1 = useSelector((state) => state.expense.expenses);
+  //const location = useNavigate();
+  const dispatch = useDispatch();
+  const expense = useSelector((state) => state.expense.expenses);
 
-  const productsArr = [
-    {
-      id: "p1",
-      amount: 400,
-      description: "bike",
-      category: "fuel",
-    },
+  let totalAmount = 0;
+  totalAmount = expense?.reduce((ack, item) => {
+    return (ack += Number(item.enteredAmount));
+  }, 0);
 
-    {
-      id: "p2",
-      amount: 600,
-      description: "frock",
-      category: "shopping",
-    },
-  ];
+  console.log(totalAmount);
+
   const submitHandler = (event) => {
     event.preventDefault();
     const obj = {
@@ -28,10 +30,10 @@ const Expenses = () => {
       enteredDescription: description.current.value,
       enteredCategory: category.current.value,
     };
-    //dispatch(expenseActions.addExpense(obj));
+    dispatch(expenseActions.addExpense(obj));
   };
 
-  const showExpenses = productsArr.map((item, index) => {
+  const showExpenses = expense.map((item, index) => {
     return (
       <ExpenseData
         key={Math.random()}
@@ -45,6 +47,7 @@ const Expenses = () => {
 
   return (
     <div>
+      <div>{totalAmount >= 10000 ? <Premium /> : <></>}</div>
       <form className={classes.exp} onSubmit={submitHandler}>
         <label htmlFor="amount">Amount: </label>
 
@@ -64,6 +67,15 @@ const Expenses = () => {
         </select>
         <input type="submit" value="Add Expense" />
       </form>
+      <div style={{ marginLeft: "45%" }}>
+        {totalAmount >= 10000 && (
+          <button>
+            <CSVLink filename={"Expenses"} data={data1}>
+              Dounload all your Expenses
+            </CSVLink>
+          </button>
+        )}
+      </div>
       <div>{showExpenses}</div>
     </div>
   );
