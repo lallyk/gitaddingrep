@@ -47,7 +47,7 @@ const Expenses = () => {
 
   return (
     <div>
-      <div>{totalAmount >= 10000 ? <Premium /> : <></>}</div>
+      <div>{totalAmount >= 1000 ? <Premium /> : <></>}</div>
       <form className={classes.exp} onSubmit={submitHandler}>
         <label htmlFor="amount">Amount: </label>
 
@@ -68,7 +68,7 @@ const Expenses = () => {
         <input type="submit" value="Add Expense" />
       </form>
       <div style={{ marginLeft: "45%" }}>
-        {totalAmount >= 10000 && (
+        {totalAmount >= 1000 && (
           <button>
             <CSVLink filename={"Expenses"} data={data1}>
               Dounload all your Expenses
