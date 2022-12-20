@@ -1,43 +1,15 @@
-import { Route, Redirect, Switch } from "react-router-dom";
-import MainHeader from "./components/MainHeader";
-import SignUpPage from "./components/Pages/SignUpPage";
-import Welcome from "./components/Pages/Welcome";
-import Update from "./components/Pages/Update";
-import VerifyEmail from "./components/Pages/VerifyEmail";
-import LogOut from "./components/Pages/LogOut";
-import Forgot from "./components/Pages/Forgot";
-import Expenses from "./components/Pages/Expenses";
-//import { AuthContextProvider } from "./Store/AuthContext";
+import Cart from "./components/Cart/Cart";
+import Layout from "./components/Layout/Layout";
+import Products from "./components/Shop/Products";
+import { useSelector } from "react-redux";
 
 function App() {
-  /*<Redirect to="/welcome" /> */
+  const show = useSelector((state) => state.UI.isCartOpen);
   return (
-    <MainHeader>
-      <Switch>
-        <Route path="/signup">
-          <SignUpPage />
-        </Route>
-        <Route path="/verify">
-          <VerifyEmail />
-        </Route>
-        <Route path="/welcome">
-          <Welcome />
-        </Route>
-        <Route path="/update">
-          <Update />
-        </Route>
-        <Route path="/logout">
-          <LogOut />
-          <Redirect to="/signup" />
-        </Route>
-        <Route path="/forgot">
-          <Forgot />
-        </Route>
-        <Route path="/expenses">
-          <Expenses />
-        </Route>
-      </Switch>
-    </MainHeader>
+    <Layout>
+      {show && <Cart />}
+      <Products />
+    </Layout>
   );
 }
 
