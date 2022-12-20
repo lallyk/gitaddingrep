@@ -1,0 +1,63 @@
+.form {
+  margin: auto;
+  border: 2px solid gray;
+  padding: 40px;
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 7px gray;
+  border: none;
+  background-color: gray;
+}
+
+.form label {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.form input {
+  padding: 10px;
+  margin-bottom: 1em;
+  width: 96%;
+  font-size: 18px;
+  border-radius: 5px;
+  border-color: white;
+  border-color: rgba(255, 252, 252, 0.945);
+}
+
+.form div {
+  text-align: center;
+}
+
+.form button {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+  padding: 5px 40px 5px 40px;
+  border-radius: 25px;
+  background-color: rgb(22, 4, 119);
+  border: none;
+  color: white;
+  width: 50%;
+}
+
+.form button:hover {
+  background-color: #130758;
+}
+
+.form button:active {
+  transform: scale(0.95);
+}
+
+.contact h1 {
+  margin: 0;
+  padding: 100px 0 20px 0;
+  background-color: gray;
+  font-size: 60px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
