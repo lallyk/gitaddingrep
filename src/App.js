@@ -1,15 +1,16 @@
-import Cart from "./components/Cart/Cart";
-import Layout from "./components/Layout/Layout";
-import Products from "./components/Shop/Products";
-import { useSelector } from "react-redux";
+import Authentication from "./Components/Authentication/Authentication";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
-  const show = useSelector((state) => state.UI.isCartOpen);
+  const islogin = useSelector((state) => state.auth.islogin);
+  const Dispatch = useDispatch();
   return (
-    <Layout>
-      {show && <Cart />}
-      <Products />
-    </Layout>
+    <div>
+      <Route path="/login">
+        <Authentication />
+      </Route>
+    </div>
   );
 }
 
