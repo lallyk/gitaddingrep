@@ -1,4 +1,4 @@
-import { AuthsliceAction } from "./Auth";
+import { authActions } from "./Auth";
 
 const loginURL =
   "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCeOmTN-OJwqeFOPe7WJ8JzHAsNN90zUVE";
@@ -27,7 +27,7 @@ export const sendsignup = (obj) => {
     };
     try {
       const data = await sendingAuth();
-      dispatch(AuthsliceAction.Login(data));
+      dispatch(authActions.Login(data));
     } catch (error) {
       console.log(error.message);
     }
@@ -62,7 +62,7 @@ export const Sendlogin = (obj) => {
       localStorage.setItem("mailid", obj.email);
 
       //  console.log(id);
-      dispatch(AuthsliceAction.Login(id));
+      dispatch(authActions.Login(id));
     } catch (error) {
       //   dispatch(
       //     AuthsliceAction.Login({
