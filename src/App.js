@@ -33,7 +33,7 @@ function App() {
   let loginlocalstore = localStorage.getItem("islogin") === "true";
   // console.log(loginlocalstore);
   const navi = useNavigate();
-  const islogin = useSelector((state) => state.auth.islogin);
+  const islogin = useSelector((state) => state.Auth.islogin);
   const Dispatch = useDispatch();
   useEffect(() => {
     if (loginlocalstore || islogin) {

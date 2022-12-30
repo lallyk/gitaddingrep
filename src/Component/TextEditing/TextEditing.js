@@ -8,7 +8,7 @@ import { sendMailHandler } from "../../Store/Mail-thunk";
 import { MymailSliceAction } from "../../Store/MymailSlice";
 import { useSelector } from "react-redux";
 import Spinner from "react-bootstrap/Spinner";
-// import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
+import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
 
 const TextEditing = () => {
   const Disptach = useDispatch();
