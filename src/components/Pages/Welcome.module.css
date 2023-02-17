@@ -2,7 +2,14 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background: #9593e7;
+  background: #080755;
+  color: white;
+}
+.page {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #66baf1;
   color: white;
 }
 .img {
@@ -17,4 +24,20 @@
   border: 1px solid #9f5ccc;
   border-radius: 10px;
   padding: 0.5rem 2.5rem;
+}
+.h1 a {
+  text-decoration: none;
+  color: white;
+  margin: 0 80px 0 0;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+}
+.page a {
+  text-decoration: none;
+  color: rgb(14, 12, 12);
+  margin: 0 80px 0 0;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
 }

@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import AuthContext from "../../Store/AuthContext";
+import { useDispatch } from "react-redux";
+
+import { authActions } from "../../Store/AuthReducer";
 
 const LogOut = () => {
-  const authCtx = useContext(AuthContext);
-  authCtx.logout();
+  const dispatch = useDispatch();
+  dispatch(authActions.logout());
 };
 export default LogOut;

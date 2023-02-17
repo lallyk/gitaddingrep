@@ -1,27 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 const expenseSlice = createSlice({
   name: "expense",
   initialState: {
     expenses: [],
-    // totalAmount:0,
-    changed: false,
   },
   reducers: {
     replaceExpense(state, action) {
-      console.log(action.payload);
+      //console.log(action.payload);
       state.expenses = action.payload;
     },
     addExpense(state, action) {
-      state.expenses.push(action.payload);
-      state.changed = true;
+      state.expenses = [...state.expenses, action.payload];
+      //state.changed = true;
     },
     deleteExpenses(state, action) {
-      console.log(action.payload);
-      let array = state.expenses.splice(action.payload, 1);
-      console.log(array);
-
-      state.changed = true;
+      const id = action.payload;
+      const newArr = [...state.expenses];
+      newArr.forEach((item, index) => {
+        if (item.id === id) {
+          newArr.splice(index, 1);
+        }
+      });
+      state.expenses = newArr;
+    },
+    editExpenses(state, action) {
+      const id = action.payload.id;
+      console.log(id);
+      const newArr = [...state.expenses];
+      newArr.forEach((item, index) => {
+        if (item.id === id) {
+          newArr.splice(index, 1);
+          state.expenses = [...newArr, action.payload.obj];
+        }
+      });
     },
   },
 });

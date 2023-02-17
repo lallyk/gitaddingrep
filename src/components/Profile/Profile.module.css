@@ -1,0 +1,75 @@
+.profile {
+  margin-top: 30rem;
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 50rem;
+  border-radius: 6px;
+  background-color: #3f389c;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 5rem;
+  text-align: center;
+  color: black;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+.profile h1 {
+  color: white;
+}
+.profile h3 {
+  color: white;
+}
+.control label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.des {
+  color: black;
+}
+
+.control input {
+  font: inherit;
+  background-color: #f1e1fc;
+  color: #26093a;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+}
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #26093a;
+  border: 1px solid #26093a;
+  border-radius: 10px;
+  padding: 0.5rem 2.5rem;
+}
+.remove {
+  float: right;
+  height: 28px;
+  width: 28px;
+  background: red;
+  color: white;
+}
+.control select {
+  font: inherit;
+  background-color: #f1e1fc;
+  color: #26093a;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+}

@@ -1,6 +1,6 @@
 .expense {
   margin: 1rem;
-  background-color: #4332da;
+  background-color: #26093a;
   box-shadow: 0 2px 8px rgba(26, 16, 141, 0.317);
   border-radius: 15px;
   text-align: center;
@@ -17,8 +17,8 @@
   cursor: pointer;
   font: inherit;
   color: white;
-  background-color: #acdae4;
-  border: 1px solid #9f5ccc;
+  background-color: #21a17b;
+  border: 1px solid #21a17b;
   border-radius: 10px;
   width: 120px;
   height: 40px;
