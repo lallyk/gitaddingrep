@@ -4,14 +4,14 @@ import { Container, Form, Button } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
-import { authActions } from "../../Store/Auth";
+import { AuthsliceAction } from "../../Store/Auth";
 import { useDispatch } from "react-redux";
 const InboxNavbar = () => {
   const navigate = useNavigate();
   const Dispatch = useDispatch();
   const logoutHandler = () => {
     localStorage.clear();
-    Dispatch(authActions.Login());
+    Dispatch(AuthsliceAction.Login());
     // navigate("/login");
   };
   return (

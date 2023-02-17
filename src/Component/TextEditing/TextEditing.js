@@ -3,12 +3,13 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
+import "./TextEditing.css";
 import { useDispatch } from "react-redux";
 import { sendMailHandler } from "../../Store/Mail-thunk";
 import { MymailSliceAction } from "../../Store/MymailSlice";
 import { useSelector } from "react-redux";
 import Spinner from "react-bootstrap/Spinner";
-import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
+// import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
 
 const TextEditing = () => {
   const Disptach = useDispatch();

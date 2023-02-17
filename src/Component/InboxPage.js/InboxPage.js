@@ -23,7 +23,7 @@ const InboxPage = () => {
     if (count > 0) {
       Disptach(getmailHandler());
     }
-  }, [count, Disptach]);
+  }, [count,Disptach]);
 
   // calling the backend api every 2 seconds to update inbox
 
@@ -37,7 +37,7 @@ const InboxPage = () => {
       console.log("clearintervelid", intervelid);
       clearInterval(intervelid);
     };
-  }, [Disptach]);
+  },[Disptach]);
 
   const sendmailcartHandler = () => {
     Disptach(getmailHandler());

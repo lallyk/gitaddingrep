@@ -1,11 +1,9 @@
-import { authActions } from "./Auth";
+import { AuthsliceAction } from "./Auth";
 
 const loginURL =
-  "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCeOmTN-OJwqeFOPe7WJ8JzHAsNN90zUVE";
+  "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDmrfNvYnpgpUo51PmLfnpKEPLYvSZrGUY";
 const signupUrl =
-  "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCeOmTN-OJwqeFOPe7WJ8JzHAsNN90zUVE";
-// const RestUrl =
-//   "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyCeOmTN-OJwqeFOPe7WJ8JzHAsNN90zUVE";
+  "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDmrfNvYnpgpUo51PmLfnpKEPLYvSZrGUY";
 export const sendsignup = (obj) => {
   return async (dispatch) => {
     const sendingAuth = async () => {
@@ -27,7 +25,7 @@ export const sendsignup = (obj) => {
     };
     try {
       const data = await sendingAuth();
-      dispatch(authActions.Login(data));
+      dispatch(AuthsliceAction.Login(data));
     } catch (error) {
       console.log(error.message);
     }
@@ -61,16 +59,7 @@ export const Sendlogin = (obj) => {
       localStorage.setItem("islogin", "true");
       localStorage.setItem("mailid", obj.email);
 
-      //  console.log(id);
-      dispatch(authActions.Login(id));
-    } catch (error) {
-      //   dispatch(
-      //     AuthsliceAction.Login({
-      //       status: "error",
-      //       title: "error!",
-      //       message: "Sent cart data successfully!",
-      //     })
-      //   );
-    }
+      dispatch(AuthsliceAction.Login(id));
+    } catch (error) {}
   };
 };

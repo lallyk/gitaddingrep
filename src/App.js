@@ -1,75 +1,54 @@
-import { Route, Redirect, Switch } from "react-router-dom";
-import MainHeader from "./components/Authentication/MainHeader";
-import SignUpPage from "./components/Pages/SignUpPage";
-import Welcome from "./components/Pages/Welcome";
-import VerifyEmail from "./components/Authentication/VerifyEmail";
-import LogOut from "./components/Pages/LogOut";
-import Forgot from "./components/Authentication/Forgot";
-import Expenses from "./components/Pages/Expenses";
-import { useDispatch, useSelector } from "react-redux";
-import classes from "./App.module.css";
-import { authActions } from "./Store/AuthReducer";
-import Profile from "./components/Profile/Profile";
+import AuthForm from "./Component/AuthForm/AuthForm";
+import TextEditing from "./Component/TextEditing/TextEditing";
+import InboxPage from "./Component/InboxPage.js/InboxPage";
+import { Route, Routes, Navigate } from "react-router-dom";
+import SentMessage from "./Component/InboxPage.js/Sentmessage/SentMessage";
 import { useEffect } from "react";
-import { fetchExpneses } from "./Store/ExpenseAction";
+import InboxList from "./Component/InboxPage.js/InboxList";
+import { useSelector, useDispatch } from "react-redux";
+import { UpdateMySentItem } from "./Store/Mail-thunk";
+import { useNavigate } from "react-router-dom";
 
-//import { AuthContextProvider } from "./Store/AuthContext";
-
-let isInitial = true;
 function App() {
-  /*<Redirect to="/welcome" /> */
-  const loggedIn = useSelector((state) => authActions.login);
-  const dispatch = useDispatch();
-  const expense = useSelector((state) => state.expense);
-  let totalAmount = 0;
-  totalAmount = expense.expenses?.reduce((ack, item) => {
-    return (ack += Number(item.enteredAmount));
-  }, 0);
-  const toggle = useSelector((state) => state.theme.toggle);
-
+  let loginlocalstore = localStorage.getItem("islogin") === "true";
+  // console.log(loginlocalstore);
+  const navi = useNavigate();
+  const islogin = useSelector((state) => state.auth.islogin);
+  const Dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchExpneses());
-  }, []);
+    if (loginlocalstore || islogin) {
+      navi("/main/text-edit");
+      console.log(" navi");
+    }
+    if (!loginlocalstore) {
+      navi("/login");
+    }
+  }, [loginlocalstore]);
 
+  const sentItem = useSelector((state) => state.mymail.sentItem);
+  const sendcount = useSelector((state) => state.mymail.sendcount);
+  useEffect(() => {
+    Dispatch(UpdateMySentItem(sentItem));
+  }, [sendcount]);
+  // console.log("app", sentItem);
   return (
-    <MainHeader
-      className={
-        totalAmount >= 1000
-          ? toggle
-            ? classes.dark
-            : classes.ligt
-          : classes.ligt
-      }
-    >
-      <div>
-        <Switch>
-          <Route path="/signup">
-            <SignUpPage />
+    <div>
+      <Routes>
+        <Route path="/login" element={<AuthForm />}></Route>
+        {loginlocalstore && (
+          <Route path="/main/*" element={<InboxPage />}>
+            <Route path="inboxlist" element={<InboxList />} />
+            <Route path="text-edit" element={<TextEditing />} />
+            <Route path="sentmessage" element={<SentMessage />} />
           </Route>
-          {loggedIn && (
-            <Route path="/verify">
-              <VerifyEmail />
-            </Route>
-          )}
-          <Route path="/welcome">
-            <Welcome />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/logout">
-            <LogOut />
-            <Redirect to="/signup" />
-          </Route>
-          <Route path="/forgot">
-            <Forgot />
-          </Route>
-          <Route path="/expenses">
-            <Expenses />
-          </Route>
-        </Switch>
-      </div>
-    </MainHeader>
+        )}
+        {!loginlocalstore && (
+          <Route element={<Navigate replace to="login" />} />
+        )}
+
+        {/* <TextEditing></TextEditing> */}
+      </Routes>
+    </div>
   );
 }
 
