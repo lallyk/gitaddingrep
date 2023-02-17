@@ -1,74 +1,60 @@
-/*import SignUp from "./components/SignUp";
-import { Route } from "react-router-dom";
-//import { useSelector, useDispatch } from "react-redux";
-//import { Col, Row, Container } from "react-bootstrap";
-//import Form from "react-bootstrap/Form";
-import React from "react";
-import Welcom from "./components/Welcome";
-function App() {
-  //const islogin = useSelector((state) => state.uiauth.islogin);
-  //const Dispatch = useDispatch();
-  return (
-    <div>
-      <div>
-        <SignUp />
-      </div>
-    </div>
-  );
-}
+import { useState } from "react";
+import React, { useContext } from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
+import classes from "./App.module.css";
 
-export default App;*/
-import AuthForm from "./Component/AuthForm/AuthForm";
-import TextEditing from "./Component/TextEditing/TextEditing";
-import InboxPage from "./Component/InboxPage.js/InboxPage";
-import { Route, Navigate, Router } from "react-router-dom";
-import SentMessage from "./Component/InboxPage.js/Sentmessage/SentMessage";
-import { useEffect } from "react";
-import InboxList from "./Component/InboxPage.js/InboxList";
-import { useSelector, useDispatch } from "react-redux";
-import { UpdateMySentItem } from "./Store/Mail-thunk";
-import { useNavigate } from "react-router-dom";
+import Header from "./components/Layout/Header";
+import Cart from "./components/Cart/Cart";
+import About from "./components/Pages/About";
+import Home from "./components/Pages/Home";
+import Login from "./components/Pages/Login";
+import ContactUs from "./components/Pages/ContactUs";
+import Products from "./components/Pages/Products";
+import ProductInformation from "./components/Pages/ProductInformation";
+import { CartContextProvider } from "./Store/CartContext";
+import Footer from "./components/footer/Footer";
+import LoginContext from "./Store/login-context";
 
 function App() {
-  let loginlocalstore = localStorage.getItem("islogin") === "true";
-  // console.log(loginlocalstore);
-  const navi = useNavigate();
-  const islogin = useSelector((state) => state.Auth.islogin);
-  const Dispatch = useDispatch();
-  useEffect(() => {
-    if (loginlocalstore || islogin) {
-      navi("/main/text-edit");
-      console.log(" navi");
-    }
-    if (!loginlocalstore) {
-      navi("/login");
-    }
-  }, [loginlocalstore]);
-
-  const sentItem = useSelector((state) => state.mymail.sentItem);
-  const sendcount = useSelector((state) => state.mymail.sendcount);
-  useEffect(() => {
-    Dispatch(UpdateMySentItem(sentItem));
-  }, [sendcount]);
-  // console.log("app", sentItem);
+  const loginCtx = useContext(LoginContext);
+  const isloggedIn = loginCtx.isloggedIn;
+  console.log(isloggedIn);
+  const [cartIsShown, setCartIsShown] = useState(false);
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
   return (
-    <div>
-      <Router>
-        <Route path="/login" element={<AuthForm />}></Route>
-        {loginlocalstore && (
-          <Route path="/main/*" element={<InboxPage />}>
-            <Route path="inboxlist" element={<InboxList />} />
-            <Route path="text-edit" element={<TextEditing />} />
-            <Route path="sentmessage" element={<SentMessage />} />
+    <CartContextProvider>
+      <div className={classes.wrap}>
+        <Header onShowCart={showCartHandler} />
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
+        <Switch>
+          <Route path="/" exact>
+            <Home />
           </Route>
-        )}
-        {!loginlocalstore && (
-          <Route element={<Navigate replace to="login" />} />
-        )}
-
-        {/* <TextEditing></TextEditing> */}
-      </Router>
-    </div>
+          <Route path="/About">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <ContactUs />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/products" exact>
+            {!isloggedIn && <Redirect to="/login" />}
+            {isloggedIn && <Products />}
+          </Route>
+          <Route path="/products/:productDetail">
+            <ProductInformation />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </CartContextProvider>
   );
 }
 

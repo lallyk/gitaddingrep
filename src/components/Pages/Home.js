@@ -9,34 +9,10 @@ const Home = () => {
     { date: "AUG 2", place: "LAS VEGAS, NV", venue: "T-MOBILE ARENAE" },
     { date: "AUG 7", place: "CONCORD, CA", venue: "CONCORD PAVILIONE" },
   ];
-  /*const mealsList = productsArr.map((tour) => (
-    <ProductItem
-      key={Math.random().toString()}
-      date={tour.date}
-      place={tour.place}
-      venue={tour.venue}
-    />
-  ));*/
+
   const tourInformation = tourInfo.map((tour) => (
     <TourData tour={tour} key={Math.random().toString()} />
   ));
-
-  /* return (
-    <section>
-      <div className={classes.generics}>
-        <div className={classes.generics}>
-          <h1 className={classes.generics}>The Generics</h1>
-        </div>
-        <button>Get our latest Album</button>
-      </div>
-      <div>
-        <h1>Tours</h1>
-        <div className={classes.data}>
-          <ul>{tourInformation}</ul>
-        </div>
-      </div>
-    </section>
-  );*/
   return (
     <section className={classes.section}>
       <div className={classes.div}>

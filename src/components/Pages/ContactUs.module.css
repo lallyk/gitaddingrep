@@ -2,18 +2,20 @@
   margin: auto;
   border: 2px solid gray;
   padding: 40px;
-  width: 600px;
+  width: 500px;
   border-radius: 10px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   box-shadow: 0 0 7px gray;
   border: none;
+  background-color: gray;
 }
 
 .form label {
   display: block;
   font-size: 25px;
   font-weight: bold;
+  color: white;
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -23,7 +25,8 @@
   width: 96%;
   font-size: 18px;
   border-radius: 5px;
-  border-color: rgb(0, 0, 0, 0.2);
+  border-color: white;
+  border-color: rgba(255, 252, 252, 0.945);
 }
 
 .form div {
@@ -36,13 +39,14 @@
   margin-top: 30px;
   padding: 5px 40px 5px 40px;
   border-radius: 25px;
-  background-color: #ccc;
+  background-color: rgb(22, 4, 119);
   border: none;
+  color: white;
   width: 50%;
 }
 
 .form button:hover {
-  background-color: #06ff8f;
+  background-color: #130758;
 }
 
 .form button:active {

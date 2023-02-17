@@ -3,6 +3,7 @@
   padding: 100px 0 20px 0;
   background-color: gray;
   font-size: 60px;
+  color: white;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
 }
@@ -12,11 +13,13 @@
   border: 2px solid gray;
   padding: 40px;
   width: 500px;
+  background-color: gray;
   border-radius: 10px;
   margin-top: 50px;
   margin-bottom: 50px;
   box-shadow: 0 0 7px gray;
   border: none;
+  color: white;
 }
 
 .form label {
@@ -46,12 +49,13 @@
   padding: 8px 30px 8px 30px;
   border-radius: 25px;
   border: none;
-  background-color: #ccc;
+  background-color: #120581;
+
   /* box-shadow: 0 0 10px rgb(133, 255, 58); */
 }
 
 .form button:hover {
-  background-color: #00ff99;
+  background-color: #120750;
 }
 
 .form button:active {
@@ -62,6 +66,6 @@
   margin: 20px;
   margin-bottom: 0;
   text-align: center;
-  color: purple;
+  color: white;
   cursor: pointer;
 }

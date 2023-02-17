@@ -24,12 +24,11 @@ const Login = () => {
 
     if (loginAccount) {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAsSpWrk2F5iyWN5UnDbxQ73HSZ-UxOW5s";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCGgKs5wlApGUw5YdBGxaewBtwG5Nlup0A";
     } else {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAsSpWrk2F5iyWN5UnDbxQ73HSZ-UxOW5s";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCGgKs5wlApGUw5YdBGxaewBtwG5Nlup0A ";
     }
-
     try {
       const res = await fetch(url, {
         method: "POST",
@@ -46,10 +45,10 @@ const Login = () => {
       const data = await res.json();
 
       if (res.ok) {
-        history.replace("/product");
-        const convertedData = JSON.stringify(data);
-        localStorage.setItem("tokenId", convertedData);
-        loginCtx.login(data);
+        history.replace("/products");
+        console.log(data);
+
+        loginCtx.login(data.idToken, data.email);
       } else {
         throw new Error(data.error.message);
       }
@@ -60,7 +59,6 @@ const Login = () => {
 
   return (
     <div className={classes.login}>
-      <h1>The Generics</h1>
       <form className={classes.form} onSubmit={loginHandler}>
         <label htmlFor="email">Email</label>
         <input id="email" type="email" ref={email} />

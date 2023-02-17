@@ -15,13 +15,16 @@ const ContactUs = () => {
       phoneNumber: phoneNumber.current.value,
     };
 
-    fetch("https://add-dats-c0d06-default-rtdb.firebaseio.com/userForm.json", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    fetch(
+      "https://expense-tracker-5dc05-default-rtdb.firebaseio.com//userForm.json",
+      {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     name.current.value = "";
     email.current.value = "";
@@ -30,8 +33,6 @@ const ContactUs = () => {
 
   return (
     <div className={classes.contact}>
-      <h1>The Generics</h1>
-
       <form className={classes.form} onSubmit={onSubmitHandler}>
         <label htmlFor="name">Name</label>
         <input id="name" type="text" ref={name} />

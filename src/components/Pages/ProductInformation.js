@@ -1,23 +1,20 @@
-import React, { useContext } from "react";
-
 import classes from "./ProductInformation.module.css";
-import ProductContext from "../../Store/ProductContext";
+import { useLocation } from "react-router-dom";
 
-const ProductInformation = () => {
-  const productCtx = useContext(ProductContext);
-
-  //   console.log('productDetail');
-
+const ProductInformation = (props) => {
+  const location = useLocation();
+  const data = location.state;
+  console.log(data);
   return (
     <div className={classes.product}>
-      <img src={productCtx.imageUrl} alt={productCtx.title} />
+      <img src={data.imageUrl} alt={data.title} />
       <div className={classes.detail}>
-        <h3>{productCtx.title}</h3>
-        <h2>${productCtx.price.toFixed(2)}</h2>
+        <h3>{data.title}</h3>
+        <h2>${data.price.toFixed(2)}</h2>
         <span className={classes.rating}>
-          Rating <span>{productCtx.rating}&#9733;</span>
+          Rating <span>4.5{data.rating}&#9733;</span>
         </span>
-        <p>{productCtx.detail}</p>
+        <p>{data.detail}</p>
       </div>
     </div>
   );
