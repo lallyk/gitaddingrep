@@ -1,10 +1,10 @@
 
 import './App.css';
 import LoginForm from './LoginForm';
-
 function App() {
+  
   return (
-    <div>
+    <div className='main'>
       <LoginForm />
     </div>
   );
