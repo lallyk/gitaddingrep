@@ -1,0 +1,66 @@
+
+.login h1 {
+    margin: 0;
+    padding: 100px 0 20px 0;
+    background-color: #120750;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .form {
+    margin: auto;
+    border: 2px solid #120750;
+    padding: 40px;
+    width: 500px;
+    background-color: rgb(34, 13, 71);
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 7px#120750;
+    border: none;
+    color: white;
+  }
+  
+  .form label {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .form input {
+    padding: 10px;
+    margin-bottom: 1em;
+    width: 95%;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: rgb(0, 0, 0, 0.2);
+  }
+  
+  .form div {
+    text-align: center;
+  }
+  
+  .form button {
+    width: 80%;
+    font-size: 25px;
+    margin-top: 30px;
+    padding: 8px 30px 8px 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(137, 237, 244);
+    color: black;
+  
+  }
+  
+  .form button:hover {
+    background-color: rgb(137, 237, 244);
+  }
+  
+  .form button:active {
+    transform: scale(0.95);
+  }
+
+  
