@@ -1,30 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import { LoginContextProvider } from "./Store/login-context";
-import { CartContextProvider } from "./Store/CartContext";
-import { ProductContextProvider } from "./Store/productContext";
-//import { LoginContextProvider } from "./Store/login-context";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <LoginContextProvider>
-    <ProductContextProvider>
-      <CartContextProvider>
-        <BrowserRouter>
-          <React.StrictMode>
-            <App />
-          </React.StrictMode>
-        </BrowserRouter>
-      </CartContextProvider>
-    </ProductContextProvider>
-  </LoginContextProvider>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
-/*<LoginContextProvider>
-  </LoginContextProvider>*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

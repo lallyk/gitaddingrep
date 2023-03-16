@@ -1,17 +1,21 @@
-.App {
+@media screen and (max-width:420px){
+  .main{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  width:75%;
   }
 }
+@media screen and (max-width:720px){
+  .main {
+  text-align: center;
+  width:50%;
+  }
+}
+.main {
+  text-align: center;
+  aspect-ratio: 5 / 2.8;
+  width:100%;
+  }
+
 
 .App-header {
   background-color: #282c34;
@@ -26,13 +30,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
