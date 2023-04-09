@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/gitaddingrep/static/css/main.92455600.css",
-    "main.js": "/gitaddingrep/static/js/main.23f536c9.js",
-    "index.html": "/gitaddingrep/index.html",
-    "main.92455600.css.map": "/gitaddingrep/static/css/main.92455600.css.map",
-    "main.23f536c9.js.map": "/gitaddingrep/static/js/main.23f536c9.js.map"
+    "main.css": "/reactprojects/static/css/main.92455600.css",
+    "main.js": "/reactprojects/static/js/main.23f536c9.js",
+    "index.html": "/reactprojects/index.html",
+    "main.92455600.css.map": "/reactprojects/static/css/main.92455600.css.map",
+    "main.23f536c9.js.map": "/reactprojects/static/js/main.23f536c9.js.map"
   },
   "entrypoints": [
     "static/css/main.92455600.css",
