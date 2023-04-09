@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/gitaddingrep/static/css/main.6f71b34a.css",
-    "main.js": "/gitaddingrep/static/js/main.0983d778.js",
+    "main.css": "/gitaddingrep/static/css/main.92455600.css",
+    "main.js": "/gitaddingrep/static/js/main.23f536c9.js",
     "index.html": "/gitaddingrep/index.html",
-    "main.6f71b34a.css.map": "/gitaddingrep/static/css/main.6f71b34a.css.map",
-    "main.0983d778.js.map": "/gitaddingrep/static/js/main.0983d778.js.map"
+    "main.92455600.css.map": "/gitaddingrep/static/css/main.92455600.css.map",
+    "main.23f536c9.js.map": "/gitaddingrep/static/js/main.23f536c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f71b34a.css",
-    "static/js/main.0983d778.js"
+    "static/css/main.92455600.css",
+    "static/js/main.23f536c9.js"
   ]
 }
