@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/lallyk/gitaddingrep.git/static/css/main.6f71b34a.css",
-    "main.js": "/lallyk/gitaddingrep.git/static/js/main.0983d778.js",
-    "index.html": "/lallyk/gitaddingrep.git/index.html",
-    "main.6f71b34a.css.map": "/lallyk/gitaddingrep.git/static/css/main.6f71b34a.css.map",
-    "main.0983d778.js.map": "/lallyk/gitaddingrep.git/static/js/main.0983d778.js.map"
+    "main.css": "/lallyk/gitaddingrep.git/react_upload/static/css/main.6f71b34a.css",
+    "main.js": "/lallyk/gitaddingrep.git/react_upload/static/js/main.0983d778.js",
+    "index.html": "/lallyk/gitaddingrep.git/react_upload/index.html",
+    "main.6f71b34a.css.map": "/lallyk/gitaddingrep.git/react_upload/static/css/main.6f71b34a.css.map",
+    "main.0983d778.js.map": "/lallyk/gitaddingrep.git/react_upload/static/js/main.0983d778.js.map"
   },
   "entrypoints": [
     "static/css/main.6f71b34a.css",
