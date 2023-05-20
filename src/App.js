@@ -1,11 +1,14 @@
+
 import './App.css';
-import LoginForm from "./LoginForm";
+import React from 'react';
+import MainPage from './MainPage';
 function App() {
-  return (
-    <div className="main">
-     <LoginForm /> 
-    </div>
-  );
+  
+  return(
+  <div className="App">
+    <MainPage />
+  </div>
+     )
 }
 
 export default App;

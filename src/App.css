@@ -1,42 +1,9 @@
-@media screen and (max-width:420px){
-  .main{
+.App {
   text-align: center;
-  width:75%;
-  }
-}
-@media screen and (max-width:720px){
-  .main {
-  text-align: center;
-  width:50%;
-  }
-}
-.main {
-  text-align: center;
-  aspect-ratio: 5 / 2.8;
-  width:100%;
-  }
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 768px) {
+  .App-header {
+    min-height: auto;
   }
 }
