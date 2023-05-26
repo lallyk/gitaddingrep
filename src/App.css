@@ -2,11 +2,14 @@
   text-align: center;
 }
 
-button{
-  background-color: rgb(20, 81, 81);
-  color:white;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+select{
+  color: black;
   width:100px;
-  height:30px;
+  height: 30px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
